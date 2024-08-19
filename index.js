@@ -290,12 +290,12 @@ async function run() {
     });
 
     // --- received reviews from client
-    // app.post('/reviews', async (req, res) => {
-    //   const item = req.body;
-    //   console.log(item);
-    //   const result = await reviewCollection.insertOne(item);
-    //   res.send(result);
-    // });
+    app.post('/reviews', async (req, res) => {
+      const item = req.body;
+      console.log(item);
+      const result = await reviewCollection.insertOne(item);
+      res.send(result);
+    });
 
 
     // ----- reviews -----
