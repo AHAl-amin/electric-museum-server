@@ -254,18 +254,18 @@ async function run() {
     });
 
     //.............. Get unique brands
-    // app.get('/brands', async (req, res) => {
-    //   try {
-    //     const brands = await productCollection.aggregate([
-    //       { $group: { _id: "$BrandName" } },
-    //       { $project: { _id: 0, BrandName: "$_id" } }
-    //     ]).toArray();
-    //     res.send(brands.map(item => item.BrandName));
-    //   } catch (error) {
-    //     console.error('Error fetching brands:', error);
-    //     res.status(500).send({ message: 'Internal server error' });
-    //   }
-    // });
+    app.get('/brands', async (req, res) => {
+      try {
+        const brands = await productCollection.aggregate([
+          { $group: { _id: "$BrandName" } },
+          { $project: { _id: 0, BrandName: "$_id" } }
+        ]).toArray();
+        res.send(brands.map(item => item.BrandName));
+      } catch (error) {
+        console.error('Error fetching brands:', error);
+        res.status(500).send({ message: 'Internal server error' });
+      }
+    });
 
     // Get unique categories
     app.get('/categories', async (req, res) => {
