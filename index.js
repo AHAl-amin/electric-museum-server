@@ -299,14 +299,14 @@ async function run() {
 
 
     // ----- reviews -----
-    // app.get('/reviews/:id', async (req, res) => {
-    //   const productId = req.params.id;
-    //   const query = { productId: productId };
-    //   console.log(query);
+    app.get('/reviews/:id', async (req, res) => {
+      const productId = req.params.id;
+      const query = { productId: productId };
+      console.log(query);
 
-    //   const result = await reviewCollection.find(query).toArray();
-    //   res.send(result);
-    // });
+      const result = await reviewCollection.find(query).toArray();
+      res.send(result);
+    });
 
     // ----- productRating -----
     app.get('/productRating/:id', async (req, res) => {
