@@ -335,12 +335,12 @@ async function run() {
     });
 
     // --- received newSubscriber from client
-    // app.post('/subscriber', async (req, res) => {
-    //   const subscriber = req.body;
-    //   console.log(subscriber);
-    //   const result = await subscriberCollection.insertOne(subscriber);
-    //   res.send(result);
-    // });
+    app.post('/subscriber', async (req, res) => {
+      const subscriber = req.body;
+      console.log(subscriber);
+      const result = await subscriberCollection.insertOne(subscriber);
+      res.send(result);
+    });
 
     // --- newSubscriber check
 
