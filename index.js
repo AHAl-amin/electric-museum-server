@@ -324,15 +324,15 @@ async function run() {
     });
 
     // ----- myReviews -----
-    // app.get('/myReviews', async (req, res) => {
-    //   const productId = req.query.productId;
-    //   const email = req.query.email;
-    //   const query = { reviewerEmail: email, productId: productId };
-    //   console.log(query);
+    app.get('/myReviews', async (req, res) => {
+      const productId = req.query.productId;
+      const email = req.query.email;
+      const query = { reviewerEmail: email, productId: productId };
+      console.log(query);
 
-    //   const result = await reviewCollection.find(query).toArray();
-    //   res.send(result);
-    // });
+      const result = await reviewCollection.find(query).toArray();
+      res.send(result);
+    });
 
     // --- received newSubscriber from client
     // app.post('/subscriber', async (req, res) => {
