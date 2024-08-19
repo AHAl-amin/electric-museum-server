@@ -344,13 +344,13 @@ async function run() {
 
     // --- newSubscriber check
 
-    // app.get('/checkSubscriber', async (req, res) => {
-    //   const newSubscriber = req.query.email;
-    //   let filter = { subscribeEmail: newSubscriber };
-    //   const result = await subscriberCollection.find(filter).toArray();
-    //   const subscribed = result.length ? true : false;
-    //   res.send({ subscribed });
-    // });
+    app.get('/checkSubscriber', async (req, res) => {
+      const newSubscriber = req.query.email;
+      let filter = { subscribeEmail: newSubscriber };
+      const result = await subscriberCollection.find(filter).toArray();
+      const subscribed = result.length ? true : false;
+      res.send({ subscribed });
+    });
 
 
     // Send a ping to confirm a successful connection
